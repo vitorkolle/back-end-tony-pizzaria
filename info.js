@@ -8,7 +8,8 @@ var clientes = {
             senha: 'andre1234',
             telefone: '8511112222', 
             endereco: 'rua abcd, bairro c, itapevi',
-            cidade: 'Itapevi-SP'
+            cidade: 'Itapevi-SP',
+            img: './img/andre.png'
         },
         {
             id: '2',
@@ -17,7 +18,8 @@ var clientes = {
             senha: 'maria1234',
             telefone: '1894445555',
             endereco: 'rua abcd, bairro g, osasco',
-            cidade: 'Osasco-SP'
+            cidade: 'Osasco-SP',
+            img: './img/maria.png'
         },
         {
             id: '3',
@@ -26,7 +28,8 @@ var clientes = {
             senha: 'vitor1234',
             telefone: '2197778888',
             endereco: 'rua abcd, bairro q, cotia',
-            cidade: 'Cotia-SP'
+            cidade: 'Cotia-SP',
+            img: './img/vitor.png'
         },
         {
             id: '4',
@@ -35,7 +38,8 @@ var clientes = {
             senha: 'paula123',
             telefone: '112226666',
             endereco: 'rua abcd, bairro t, barueri',
-            cidade: 'Barueri-SP'
+            cidade: 'Barueri-SP',
+            img: './img/paula.png'
         },
         {
             id: '5',
@@ -44,7 +48,8 @@ var clientes = {
             senha: 'felipe1234',
             telefone: '8290001111',
             endereco: 'rua abcd, bairro e, são roque',
-            cidade: 'São Roque-SP'
+            cidade: 'São Roque-SP',
+            img: './img/felipe.png'
         }
     ]
 }
@@ -64,7 +69,9 @@ var produtos = {
             descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             preco: 'R$ 16,00',
             imagem: './img/calabreza-com-queijo.svg',
-            categoria: categorias[0]
+            categoria: categorias[0],
+            qtd_estrela: 5
+            
         },
         {
             id: '2',
@@ -72,7 +79,8 @@ var produtos = {
             descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             preco: 'R$ 19,00',
             imagem: './img/pepperoni-com-queijo.svg',
-            categoria: categorias[0]
+            categoria: categorias[0],
+            qtd_estrela: 4
         },
         {
             id: '3',
@@ -80,7 +88,8 @@ var produtos = {
             descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             preco: 'R$ 18,00',
             imagem: './img/marguerita.svg',
-            categoria: categorias[0]
+            categoria: categorias[0],
+            qtd_estrela: 5
         },
         {
             id: '4',
@@ -88,7 +97,8 @@ var produtos = {
             descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             preco: 'R$ 19,00',
             imagem: './img/pepperoni-com-queijo-e-tomate.svg',
-            categoria: categorias[0]
+            categoria: categorias[0],
+            qtd_estrela: 5
         },
         {
             id: '5',
@@ -96,22 +106,51 @@ var produtos = {
             descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             preco: 'R$ 12,00',
             imagem: './img/brotinho-com-queijo-e-tomate.svg',
-            categoria: categorias[0]
+            categoria: categorias[0],
+            qtd_estrela: 4
         },
         {
             id: '6',
             titulo: 'Coca-cola 2L',
             descricao: 'Refrigerante Garrafa 2l Embalagem Econômica',
             preco: 'R$ 14,99',
-            categoria: categorias[1] 
+            categoria: categorias[1],
+            qtd_estrela: 5
         },
         {
             id: '7',
             titulo: 'Cerveja Heineken',
             descricao: 'Fardo com 6 garrafas de 600ml Embalagem Econômica',
             preco: 'R$ 44,90',
-            categoria: categorias[1]
+            categoria: categorias[1],
+            qtd_estrela: 4
         }
 
     ]
 }
+
+var comentarios = {
+    dados:
+    [
+        {
+            id: '1',
+            img_cliente: './img/maria-da-silva.png',
+            nome_cliente: 'Maria da Silva',
+            data_comentario: '15/03/2022',
+            titulo_comentario: 'Pizza muito boa!',
+            conteudo_comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+            numero_estrelas: 4
+        },
+        {
+            id: '2',
+            img_cliente: './img/pedro-gomes-dias.png',
+            nome_cliente: 'Pedro Gomes Dias',
+            data_comentario: '21/05/2022',
+            titulo_comentario: 'Essa pizza é demais, recomendo.',
+            conteudo_comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+            numero_estrelas: 5 
+        }
+
+    ]
+}
+
