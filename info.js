@@ -65,7 +65,7 @@ var produtos = {
     [
         {
             id: '1',
-            titulo: 'Pizza de calabreza com queijo',
+            titulo: 'Pizza de Calabreza Com Queijo',
             descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             preco: 'R$ 16,00',
             imagem: './img/calabreza-com-queijo.svg',
@@ -75,7 +75,7 @@ var produtos = {
         },
         {
             id: '2',
-            titulo: 'Pizza de peperoni com queijo',
+            titulo: 'Pizza de Peperoni Com Queijo',
             descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             preco: 'R$ 19,00',
             imagem: './img/pepperoni-com-queijo.svg',
@@ -93,7 +93,7 @@ var produtos = {
         },
         {
             id: '4',
-            titulo: 'Pizza de peperoni com queijo e tomate',
+            titulo: 'Pizza De Peperoni Com Queijo E Tomate',
             descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             preco: 'R$ 19,00',
             imagem: './img/pepperoni-com-queijo-e-tomate.svg',
@@ -102,7 +102,7 @@ var produtos = {
         },
         {
             id: '5',
-            titulo: 'Pizza brotinho com queijo e tomate',
+            titulo: 'Pizza Brotinho Com Queijo e Tomate',
             descricao: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
             preco: 'R$ 12,00',
             imagem: './img/brotinho-com-queijo-e-tomate.svg',
@@ -111,7 +111,7 @@ var produtos = {
         },
         {
             id: '6',
-            titulo: 'Coca-cola 2L',
+            titulo: 'Coca-Cola 2l',
             descricao: 'Refrigerante Garrafa 2l Embalagem Econômica',
             preco: 'R$ 14,99',
             categoria: categorias[1],
@@ -196,3 +196,32 @@ const getProdutos = function(){
         return false
     }
 }
+
+const getProduto = function(produtoSelecionado){
+    const produtoLocal = produtoSelecionado
+    const jsonProduto = {}
+    let status = false
+
+    produtos.dados.forEach(produtos => {
+        if(produtoLocal.toLowerCase() == produtos.titulo.toLowerCase()){
+            jsonProduto.titulo = produtos.titulo
+            jsonProduto.descricao = produtos.descricao
+            jsonProduto.img = produtos.imagem
+            jsonProduto.categoria = produtos.categoria
+            jsonProduto.preco = produtos.preco
+            jsonProduto.qtd_estrela = produtos.qtd_estrela
+            status = true
+        }        
+    });
+
+    if(status == true){
+        return jsonProduto
+    }
+    else{
+        return false
+    }
+
+}
+
+getProduto('Pizza De Peperoni Com Queijo E Tomate')
+
