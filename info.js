@@ -175,3 +175,24 @@ const getCategorias = function(){
     
 
 }
+
+const getProdutos = function(){
+    const produtosLocal = []
+    const jsonProdutos = {}
+    let status = false
+    
+    produtos.dados.forEach(produtos => {
+        produtosLocal.push(produtos)
+        status = true        
+    });
+
+    jsonProdutos.dados = produtosLocal
+
+    
+    if(status == true){
+        return jsonProdutos
+    }
+    else{
+        return false
+    }
+}
