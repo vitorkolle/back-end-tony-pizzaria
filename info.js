@@ -53,12 +53,38 @@ var clientes = {
         }
     ]
 }
+
 var categorias = [
     {id: '1', nome_categoria: 'Pizza', img_categoria: './img/icone-pizza'},
     {id: '2', nome_categoria: 'Bebida', img_categoria: './img/icone-bebidas'},
     {id: '3', nome_categoria: 'Fruta', img_categoria: './img/icone-fruta'},
     {id: '4', nome_categoria: 'Sorvete', img_categoria: './img/icone-sorvete'}    
 ]
+
+var comentarios = {
+    dados:
+    [
+        {
+            id: '1',
+            img_cliente: './img/maria-da-silva.png',
+            nome_cliente: 'Maria da Silva',
+            data_comentario: '15/03/2022',
+            titulo_comentario: 'Pizza muito boa!',
+            conteudo_comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+            numero_estrelas: 4
+        },
+        {
+            id: '2',
+            img_cliente: './img/pedro-gomes-dias.png',
+            nome_cliente: 'Pedro Gomes Dias',
+            data_comentario: '21/05/2022',
+            titulo_comentario: 'Essa pizza é demais, recomendo.',
+            conteudo_comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+            numero_estrelas: 5 
+        }
+
+    ]
+}
 
 var produtos = {
     dados:
@@ -129,31 +155,6 @@ var produtos = {
     ]
 }
 
-var comentarios = {
-    dados:
-    [
-        {
-            id: '1',
-            img_cliente: './img/maria-da-silva.png',
-            nome_cliente: 'Maria da Silva',
-            data_comentario: '15/03/2022',
-            titulo_comentario: 'Pizza muito boa!',
-            conteudo_comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-            numero_estrelas: 4
-        },
-        {
-            id: '2',
-            img_cliente: './img/pedro-gomes-dias.png',
-            nome_cliente: 'Pedro Gomes Dias',
-            data_comentario: '21/05/2022',
-            titulo_comentario: 'Essa pizza é demais, recomendo.',
-            conteudo_comentario: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-            numero_estrelas: 5 
-        }
-
-    ]
-}
-
 const getCategorias = function(){
     const categoriaLocal = []
     const jsonCategorias = {}
@@ -210,11 +211,13 @@ const getProduto = function(produtoSelecionado){
             jsonProduto.categoria = produtos.categoria
             jsonProduto.preco = produtos.preco
             jsonProduto.qtd_estrela = produtos.qtd_estrela
+            jsonProduto.comentarios = comentarios.dados
             status = true
         }        
     });
 
     if(status == true){
+        console.log(jsonProduto)
         return jsonProduto
     }
     else{
@@ -222,6 +225,3 @@ const getProduto = function(produtoSelecionado){
     }
 
 }
-
-getProduto('Pizza De Peperoni Com Queijo E Tomate')
-
