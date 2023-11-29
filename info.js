@@ -154,3 +154,24 @@ var comentarios = {
     ]
 }
 
+const getCategorias = function(){
+    const categoriaLocal = []
+    const jsonCategorias = {}
+    let status = false
+
+    categorias.forEach(categorias => {
+        categoriaLocal.push(categorias.img_categoria)  
+        status = true      
+    });
+
+    jsonCategorias.img = categoriaLocal
+
+    if(status == true){
+        return jsonCategorias
+    }
+    else{
+        return false
+    }
+    
+
+}
