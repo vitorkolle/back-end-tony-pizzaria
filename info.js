@@ -225,3 +225,29 @@ const getProduto = function(produtoSelecionado){
     }
 
 }
+
+const getCliente = function(nomeCliente){
+    const jsonCliente = {}
+    let status = false
+
+    clientes.dados.forEach(clientes => {
+        if(nomeCliente.toLowerCase() == clientes.nome.toLowerCase()){
+            jsonCliente.nome = clientes.nome
+            jsonCliente.email = clientes.email
+            jsonCliente.telefone = clientes.telefone
+            jsonCliente.endereco = clientes.endereco
+            jsonCliente.cidade = clientes.cidade
+            jsonCliente.img = clientes.img
+            status = true
+        }                
+    });
+
+    if(status == true){
+        return jsonCliente
+    }
+    else{
+        return false
+    }
+
+    
+}
