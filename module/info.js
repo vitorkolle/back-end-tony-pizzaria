@@ -251,3 +251,10 @@ const getCliente = function(nomeCliente){
 
     
 }
+
+module.exports = {
+    getCategorias,
+    getCliente,
+    getProduto,
+    getProdutos
+}
