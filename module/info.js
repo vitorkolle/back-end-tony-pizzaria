@@ -199,12 +199,12 @@ const getProdutos = function(){
 }
 
 const getProduto = function(produtoSelecionado){
-    const produtoLocal = produtoSelecionado
+    const produtoLocal = produtoSelecionado.toLowerCase()
     const jsonProduto = {}
     let status = false
 
     produtos.dados.forEach(produtos => {
-        if(produtoLocal.toLowerCase() == produtos.titulo.toLowerCase()){
+        if(produtoLocal == produtos.titulo.toLowerCase()){
             jsonProduto.titulo = produtos.titulo
             jsonProduto.descricao = produtos.descricao
             jsonProduto.img = produtos.imagem
@@ -251,7 +251,6 @@ const getCliente = function(nomeCliente){
 
     
 }
-getCategorias()
 
 module.exports = {
     clientes,

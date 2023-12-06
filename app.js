@@ -14,11 +14,11 @@ app.use((request, response, next) => {
         next()
 })
 
-//endpoint: retorna as categorias
+//endpoint: retorna todas as categorias
 app.get('/categorias', cors(), async function(request, response, next){
-
     let controleCategorias = require('./module/info.js')
     let categorias = controleCategorias.getCategorias()
+
     if(categorias){
         response.status(200)
         response.json(categorias)
@@ -27,6 +27,39 @@ app.get('/categorias', cors(), async function(request, response, next){
         response.status(404)
         response.json('{erro: item não encontrado}')
     }
+})
+
+//endpoint: retorna todos os produtos
+app.get('/produtos', cors(), async function(request, response, next){
+    let controleProdutos = require('./module/info.js')
+    let produtos = controleProdutos.getProdutos()
+
+    if(produtos){
+        response.status(200)
+        response.json(produtos)
+    }
+    else{
+        response.status(404)
+        response.json('{erro: item não encontrado}')
+    }
+})
+
+//endpoint: retorna o produto selecionado
+app.get('/produto/', cors(), async function(request, response, next){
+    let nomeProduto = request.query.produto
+
+    let controleProduto = require('./module/info.js')
+    let produto = controleProduto.getProduto(nomeProduto)
+
+    if(produto){
+        response.status(200)
+        response.json(produto)
+    }
+    else{
+        response.status(404)
+        response.json('{erro: item não encontrado}')
+    }
+
 })
 
 app.listen('8080', function(){
