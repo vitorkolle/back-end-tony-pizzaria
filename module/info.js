@@ -228,10 +228,11 @@ const getProduto = function(produtoSelecionado){
 
 const getCliente = function(nomeCliente){
     const jsonCliente = {}
+    let nomeLocal = nomeCliente.toLowerCase()
     let status = false
 
     clientes.dados.forEach(clientes => {
-        if(nomeCliente.toLowerCase() == clientes.nome.toLowerCase()){
+        if(nomeLocal == clientes.nome.toLowerCase()){
             jsonCliente.nome = clientes.nome
             jsonCliente.email = clientes.email
             jsonCliente.telefone = clientes.telefone

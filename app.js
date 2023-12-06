@@ -62,6 +62,23 @@ app.get('/produto/', cors(), async function(request, response, next){
 
 })
 
+//endpoint: retorna dados do cliente selecionado
+app.get('/cliente/', cors(), async function(request, response, next){
+    let nomeCliente = request.query.nome
+
+    let controleClientes = require('./module/info.js')
+    let cliente = controleClientes.getCliente(nomeCliente)
+
+    if(cliente){
+        response.status(200)
+        response.json(cliente)
+    }
+    else{
+        response.status(404)
+        response.json('{erro: item não encontrado}')
+    }
+})
+
 app.listen('8080', function(){
     console.log('API funcionando!!!!')
 })
