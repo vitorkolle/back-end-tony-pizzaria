@@ -79,6 +79,20 @@ app.get('/cliente/', cors(), async function(request, response, next){
     }
 })
 
+//endpoint: retorna os comentários
+app.get('/comentarios', cors(), async function(request, response, next){
+    let controleComentarios = require('./module/info.js')
+    let comentarios = controleComentarios.getComentarios()
+
+    if(comentarios){
+        response.status(200)
+        response.json(comentarios)
+    }
+    else{
+        response.status(404)
+        response.json('{erro: item não encontrado}')
+    }
+})
 app.listen('8080', function(){
     console.log('API funcionando!!!!')
 })

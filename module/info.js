@@ -253,6 +253,28 @@ const getCliente = function(nomeCliente){
     
 }
 
+const getComentarios = function(){
+    const jsonComentarios = {}
+    const arrayComentarios = []
+    let status = false
+
+    comentarios.dados.forEach(comentarios => {
+        arrayComentarios.push(comentarios)
+        status = true     
+    });
+    jsonComentarios.dados = arrayComentarios
+
+    if(status == true){
+        console.log(jsonComentarios)
+        return jsonComentarios
+    }
+    else{
+        return false
+    }
+}
+
+getComentarios()
+
 module.exports = {
     clientes,
     categorias,
@@ -260,5 +282,6 @@ module.exports = {
     getCategorias,
     getCliente,
     getProduto,
-    getProdutos
+    getProdutos,
+    getComentarios
 }
