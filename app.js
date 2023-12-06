@@ -14,15 +14,14 @@ app.use((request, response, next) => {
         next()
 })
 
-//endpoint: retorna imagem das categorias
-app.get('/categorias/img', cors(), async function(request, response, next){
+//endpoint: retorna as categorias
+app.get('/categorias', cors(), async function(request, response, next){
 
     let controleCategorias = require('./module/info.js')
-    let imgCategorias = controleCategorias.getCategorias
-    
-    if(imgCategorias){
+    let categorias = controleCategorias.getCategorias()
+    if(categorias){
         response.status(200)
-        response.json(imgCategorias)
+        response.json(categorias)
     }
     else{
         response.status(404)

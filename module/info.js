@@ -1,4 +1,4 @@
-var clientes = {
+var clientes = { 
     dados:
     [
         {
@@ -161,11 +161,11 @@ const getCategorias = function(){
     let status = false
 
     categorias.forEach(categorias => {
-        categoriaLocal.push(categorias.img_categoria)  
+        categoriaLocal.push(categorias)  
         status = true      
     });
 
-    jsonCategorias.img = categoriaLocal
+    jsonCategorias.categorias = categoriaLocal
 
     if(status == true){
         return jsonCategorias
@@ -251,8 +251,12 @@ const getCliente = function(nomeCliente){
 
     
 }
+getCategorias()
 
 module.exports = {
+    clientes,
+    categorias,
+    produtos,
     getCategorias,
     getCliente,
     getProduto,
