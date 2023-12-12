@@ -16,7 +16,7 @@ app.use((request, response, next) => {
 
 //endpoint: retorna todas as categorias
 app.get('/categorias', cors(), async function(request, response, next){
-    let controleCategorias = require('./module/info.js')
+    let controleCategorias = require('./module/funcoes.js')
     let categorias = controleCategorias.getCategorias()
 
     if(categorias){
@@ -31,8 +31,8 @@ app.get('/categorias', cors(), async function(request, response, next){
 
 //endpoint: retorna todos os produtos
 app.get('/produtos', cors(), async function(request, response, next){
-    let controleProdutos = require('./module/info.js')
-    let produtos = controleProdutos.getProdutos()
+    let controleProdutos = require('./module/funcoes.js')
+    let produtos = controleProdutos.getCategorias()
 
     if(produtos){
         response.status(200)
@@ -48,7 +48,7 @@ app.get('/produtos', cors(), async function(request, response, next){
 app.get('/produto/', cors(), async function(request, response, next){
     let nomeProduto = request.query.produto
 
-    let controleProduto = require('./module/info.js')
+    let controleProduto = require('./module/funcoes.js')
     let produto = controleProduto.getProduto(nomeProduto)
 
     if(produto){
@@ -66,7 +66,7 @@ app.get('/produto/', cors(), async function(request, response, next){
 app.get('/cliente/', cors(), async function(request, response, next){
     let nomeCliente = request.query.nome
 
-    let controleClientes = require('./module/info.js')
+    let controleClientes = require('./module/funcoes.js')
     let cliente = controleClientes.getCliente(nomeCliente)
 
     if(cliente){
@@ -81,7 +81,7 @@ app.get('/cliente/', cors(), async function(request, response, next){
 
 //endpoint: retorna os comentários
 app.get('/comentarios', cors(), async function(request, response, next){
-    let controleComentarios = require('./module/info.js')
+    let controleComentarios = require('./module/funcoes.js')
     let comentarios = controleComentarios.getComentarios()
 
     if(comentarios){
